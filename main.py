@@ -9,7 +9,7 @@ client_secret = os.environ['SECRET']
 user_agent = os.environ['USER']
 
 redis_host = os.environ['REDIS_HOST']
-redis_port = 6379
+redis_port = os.environ['REDIS_PORT']
 set_name = "dashboard"
 
 
