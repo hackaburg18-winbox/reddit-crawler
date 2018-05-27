@@ -21,8 +21,7 @@ def main():
         if search_term in str.lower(e.title):
             print("%s: %s - %s, %s" % (e.created_utc, e.title, e.author, e.selftext))
             key = 'red_%s' % e.id
-            redis_db.hsetnx(key,
-                            {"title": e.title, "author": e.author.name, "text": e.selftext, "timestamp": e.created_utc})
+            redis_db.hsetnx(set_name, key, {"title": e.title, "author": e.author.name, "text": e.selftext, "timestamp": e.created_utc})
 
 
 if __name__ == "__main__":
